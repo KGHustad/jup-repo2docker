@@ -18,4 +18,4 @@ binder/environment.yml: binder/conda_packages.txt
 
 
 image:
-	jupyter-repo2docker --image_name $(IMAGE_NAME):$(IMAGE_TAG) binder/
+	jupyter-repo2docker --image-name $(IMAGE_NAME):$(IMAGE_TAG) binder/
