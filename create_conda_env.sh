@@ -7,7 +7,7 @@ set +x
 conda create --yes --name ${CONDA_ENV_NAME} python=3.6
 source activate ${CONDA_ENV_NAME}
 
-conda config --append channels conda-forge
+conda config --prepend channels conda-forge
 conda install --yes --file ${CONDA_PACKAGE_LIST}
 
 # remove pyqt and qt
