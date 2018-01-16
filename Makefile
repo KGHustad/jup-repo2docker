@@ -1,7 +1,9 @@
 .PHONY: spec image
 
-spec_files = binder/apt.txt binder/environment.yml
+IMAGE_NAME = jup/singleuser-uio
+IMAGE_TAG = $(shell git rev-parse --short HEAD)
 
+spec_files = binder/apt.txt binder/environment.yml
 
 spec: $(spec_files)
 
@@ -13,3 +15,7 @@ binder/conda_packages.txt: $(wildcard binder/src/conda_packages.d/*.txt)
 
 binder/environment.yml: binder/conda_packages.txt
 	./create_conda_env.sh
+
+
+image:
+	jupyter-repo2docker --image_name $(IMAGE_NAME):$(IMAGE_TAG) binder/
