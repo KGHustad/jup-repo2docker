@@ -1,0 +1,38 @@
+wget
+bzip2
+ca-certificates
+sudo
+fonts-liberation
+rsync
+
+# Install htop too for checking memory usage
+htop
+
+# Install all OS dependencies for fully functional notebook server (from jupyter/minimal-notebook)
+build-essential
+emacs
+git
+inkscape
+jed
+libsm6
+libxext-dev
+libxrender1
+lmodern
+pandoc
+python-dev
+texlive-fonts-extra
+texlive-fonts-recommended
+texlive-generic-recommended
+texlive-latex-base
+texlive-latex-extra
+texlive-xetex
+vim
+unzip
+
+# Install requirements for native LaTeX math in matplotlib
+dvipng
+ghostscript
+
+# Install ffmpeg for matplotlib animations
+ffmpeg
+libav-tools
