@@ -1,0 +1,20 @@
+pipeline:
+  build:
+    image: fedora
+    commands:
+      - dnf install -y git docker
+      - wget --quiet https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh && bash Miniconda3-latest-Linux-x86_64.sh -b -p $CONDA_DIR
+      - export PATH=$CONDA_DIR/bin:$PATH
+      - conda config --system --prepend channels conda-forge
+      - conda update --all -y
+      - make spec
+      - make image
+
+services:
+  docker:
+    image: docker:dind
+    privileged: true
+
+matrix:
+  CONDA_DIR:
+    - /root/conda
