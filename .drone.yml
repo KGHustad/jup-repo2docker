@@ -7,8 +7,8 @@ pipeline:
       - export PATH=$CONDA_DIR/bin:$PATH
       - conda config --system --prepend channels conda-forge
       - conda update --all -y
-      - make spec
-      - make image
+      - time make spec
+      - time make image
 
 services:
   docker:
