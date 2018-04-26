@@ -4,7 +4,7 @@ IMAGE_NAME = jup/singleuser-uio
 IMAGE_TAG = $(shell git rev-parse --short HEAD)
 
 env_variables = $(subst \n, ,$(shell cat environment_variables.txt))
-env_variables_args = $(foreach env_var,$(env_variables),-e $(env_var))
+env_variables_args = $(foreach env_var,$(env_variables),--env $(env_var))
 
 spec_files = binder/apt.txt binder/environment.yml
 
@@ -20,4 +20,4 @@ binder/environment.yml: binder/conda_packages.txt
 	./create_conda_env.sh
 
 image:
-	jupyter-repo2docker $(env_variables_args) --image-name $(IMAGE_NAME):$(IMAGE_TAG) binder/
+	jupyter-repo2docker --image-name $(IMAGE_NAME):$(IMAGE_TAG) $(env_variables_args) binder/
