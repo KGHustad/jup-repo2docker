@@ -9,6 +9,7 @@ pipeline:
       - conda update --all -y
       - time make spec
       - cat binder/environment.yml
+      - git diff
       #- time make image
 
 #services:
