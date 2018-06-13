@@ -4,6 +4,7 @@ ca-certificates
 sudo
 fonts-liberation
 rsync
+less
 
 # Install htop too for checking memory usage
 htop
