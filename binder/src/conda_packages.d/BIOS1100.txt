@@ -1,0 +1,7 @@
+matplotlib
+metakernel
+numpy
+pandas
+pillow
+scipy
+seaborn
