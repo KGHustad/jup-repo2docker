@@ -10,13 +10,13 @@ spec_files = binder/apt.txt binder/environment.yml
 
 spec: $(spec_files)
 
-binder/apt.txt: binder/src/apt.txt
+binder/apt.txt: binder/src/apt.txt apt_preprocess.py
 	cat $< | ./apt_preprocess.py > $@
 
 binder/conda_packages.txt: $(wildcard binder/src/conda_packages.d/*.txt)
 	cat $^ | sort | uniq > $@
 
-binder/environment.yml: binder/conda_packages.txt
+binder/environment.yml: create_conda_env.sh binder/conda_packages.txt environment_pipsuffix.yml strip_pip.py
 	./create_conda_env.sh
 
 image:

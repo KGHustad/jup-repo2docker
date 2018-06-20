@@ -1,0 +1,5 @@
+# odesolver for IN1900
+git+https://github.com/KGHustad/odesolver#egg=odesolver
+# mobilechelonian for using turtle in Jupyter
+mobilechelonian
+
