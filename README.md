@@ -21,3 +21,5 @@ To build the Docker image
 ```
 make image
 ```
+
+Note that the default command set in the Dockerfile is `jupyter notebook --ip 0.0.0.0`. We want to run our own bash script to copy in new files and check for maintenance. This script is located in `binder/jupyterhub-uio.sh` and is copied into a directory on the user's PATH. This should allow us to run the docker image with the command `./jupyterhub-uio.sh`

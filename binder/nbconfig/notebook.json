@@ -1,0 +1,9 @@
+{
+  "keys": {
+    "command": {
+      "bind": {
+        "9,9": "jupyter-notebook:restart-kernel-and-run-all-cells"
+      }
+    }
+  }
+}

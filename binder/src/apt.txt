@@ -5,6 +5,7 @@ sudo
 fonts-liberation
 rsync
 less
+tree
 
 # Install htop too for checking memory usage
 htop
