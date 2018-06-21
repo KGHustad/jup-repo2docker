@@ -21,3 +21,7 @@ binder/environment.yml: create_conda_env.sh binder/conda_packages.txt environmen
 
 image:
 	jupyter-repo2docker --image-name $(IMAGE_NAME):$(IMAGE_TAG) $(env_variables_args) binder/
+
+# Dump Dockerfile to stderr
+image-debug:
+	jupyter-repo2docker --debug --no-build --image-name $(IMAGE_NAME):$(IMAGE_TAG) binder/

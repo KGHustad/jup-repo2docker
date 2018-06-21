@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Note that postBuild runs as $NB_USER
+
+launch_script=jupyterhub-uio.sh
+src_custom_dir=uio-customization
+nbconfig_dir=nbconfig
+
+# add launch script to directory on $NB_USER's PATH
+cp ${launch_script} /home/$NBUSER/.local/jupyterhub-uio.sh
+
+# add UiO theming
+mkdir -p /home/$NB_USER/.jupyter/custom/
+mv ${src_custom_dir}/jupyter-custom.js /home/$NB_USER/.jupyter/custom/custom.js
+mv ${src_custom_dir}/UiO_A_ENG.png /home/$NB_USER/.jupyter/custom/UiO_A_ENG.png
+
+# add 9,9 as keybinding for restart notebook and run all
+mkdir -p /home/$NB_USER/.jupyter/nbconfig/
+mv ${nbconfig_dir}/notebook.json /home/$NB_USER/.jupyter/nbconfig/notebook.json
