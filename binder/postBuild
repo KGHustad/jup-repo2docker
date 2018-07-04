@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Exit on error
+set -e
+
 # Note that postBuild runs as $NB_USER
 
 launch_script=jupyterhub-uio.sh
