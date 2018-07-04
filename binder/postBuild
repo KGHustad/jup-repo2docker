@@ -10,6 +10,7 @@ src_custom_dir=uio-customization
 nbconfig_dir=nbconfig
 
 # add launch script to directory on $NB_USER's PATH
+mkdir -p /home/$NB_USER/.local
 cp ${launch_script} /home/$NB_USER/.local/jupyterhub-uio.sh
 
 # add UiO theming
