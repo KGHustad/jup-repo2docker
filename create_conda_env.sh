@@ -1,3 +1,5 @@
+#!/bin/bash
+
 set -x
 CONDA_ENV_NAME=jup
 CONDA_ENV_FILE=binder/environment.yml
