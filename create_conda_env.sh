@@ -4,6 +4,7 @@ set -x
 CONDA_ENV_NAME=jup
 CONDA_ENV_FILE=binder/environment.yml
 CONDA_PACKAGE_LIST=binder/conda_packages.txt
+EXTRA_CHANNELS_LIST=binder/conda_extra_channels.txt
 set +x
 
 # exit on non-zero return code
@@ -13,6 +14,12 @@ conda create --yes --name ${CONDA_ENV_NAME} python=3.6
 source activate ${CONDA_ENV_NAME}
 
 conda config --prepend channels conda-forge
+
+while read extra_channel; do
+    echo "Appending ${extra_channel} to channel list"
+    conda config --append channels ${extra_channel}
+done < ${EXTRA_CHANNELS_LIST}
+
 conda install --yes --file ${CONDA_PACKAGE_LIST}
 
 # remove pyqt and qt
