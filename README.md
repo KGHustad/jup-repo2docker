@@ -5,9 +5,14 @@
 
 ### Conda packages
 The list of conda packages is generated from concatenating the files in `binder/src/conda_packages.d/`. Within that directory, there is one file for each course, and additionally there is `core.txt` where the JupyterHub version is specified, and `base.txt` with the some of the most commonly used packages for scientific computing with Python.
+
+The files in `binder/src/conda_packages.d/` are fed into `process_conda_requirements.py`, which generates `binder/conda_packages.txt` and `binder/conda_extra_channels.txt`. And these files are used by `create_conda_env.sh`.
+
 __NB: Duplicate packages are removed with `uniq` (duplicate packages should result in identical lines in the concatenated file). There could be version constraints like "numpy<=1.14", and "numpy>=1.12", which conda is able to handle.__
 
 ## Environment variables
+__TODO: Move environment variables to `jup-helm-config`__
+
 Environment variables for the image can be specified in `environment_variables.txt` (one variable per line).
 We set `OMP_NUM_THREADS=1` since we are aiming to maximise QoS for a potentially large number of users. (Some libraries used by numpy and scipy are OpenMP-enabled.)
 
