@@ -6,6 +6,7 @@ pipeline:
       - wget --quiet https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh && bash Miniconda3-latest-Linux-x86_64.sh -b -p $CONDA_DIR
       - export PATH=$CONDA_DIR/bin:$PATH
       - conda config --system --prepend channels conda-forge
+      - conda config --set quiet true
       - conda update --all -y
       - time make spec
       - cat binder/environment.yml
