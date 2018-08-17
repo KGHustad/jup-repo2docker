@@ -14,6 +14,9 @@ for line in sys.stdin:
     line = line.strip()
     if line == "":
         continue
+    elif line.startswith('#'):
+        # comment line
+        continue
 
     print(line)
     words = line.split()
