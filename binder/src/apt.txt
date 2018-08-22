@@ -6,6 +6,7 @@ fonts-liberation
 rsync
 less
 tree
+time
 
 # Install htop too for checking memory usage
 htop
@@ -29,6 +30,7 @@ texlive-latex-base
 texlive-latex-extra
 texlive-xetex
 vim
+zip
 unzip
 
 # Install requirements for native LaTeX math in matplotlib
