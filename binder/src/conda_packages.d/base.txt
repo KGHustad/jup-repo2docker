@@ -19,5 +19,6 @@ sqlalchemy
 statsmodels
 sympy
 tabulate
+tqdm
 vincent
 xlrd
