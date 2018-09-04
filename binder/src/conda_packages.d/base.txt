@@ -7,10 +7,12 @@ h5py
 hdf5
 matplotlib
 nomkl
+nose
 numba
 numexpr
 numpy
 patsy
+pytest
 scikit-image
 scikit-learn
 scipy
