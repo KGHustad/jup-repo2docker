@@ -10,8 +10,9 @@ dependencies:
   - asn1crypto=0.24.0=py36_3
   - astor=0.7.1=py_0
   - async_generator=1.10=py_0
-  - attrs=18.1.0=py_1
-  - autobahn=18.8.1=py_0
+  - atomicwrites=1.1.5=py36_0
+  - attrs=18.2.0=py_0
+  - autobahn=18.9.1=py_0
   - automat=0.7.0=py_1
   - backcall=0.1.0=py_0
   - beautifulsoup4=4.6.3=py36_0
@@ -33,15 +34,15 @@ dependencies:
   - cryptography-vectors=2.3.1=py36_0
   - cycler=0.10.0=py_1
   - cython=0.28.5=py36hfc679d8_0
-  - dask-core=0.18.2=py_0
+  - dask-core=0.19.0=py_0
   - dbus=1.13.0=h3a4f0e9_0
   - decorator=4.3.0=py_0
   - dill=0.2.8.2=py36_0
   - entrypoints=0.2.3=py36_2
-  - expat=2.2.5=hfc679d8_1
+  - expat=2.2.5=hfc679d8_2
   - fastcache=1.0.2=py36h470a237_1
-  - fontconfig=2.13.0=h65d0f4c_5
-  - freetype=2.9.1=h6debe1e_1
+  - fontconfig=2.13.0=h65d0f4c_6
+  - freetype=2.9.1=h6debe1e_2
   - gast=0.2.0=py_0
   - gettext=0.19.8.1=0
   - glib=2.55.0=h464dc38_2
@@ -61,10 +62,10 @@ dependencies:
   - ipykernel=4.9.0=py36_0
   - ipython=6.5.0=py36_0
   - ipython_genutils=0.2.0=py_1
-  - ipywidgets=7.4.0=py_0
+  - ipywidgets=7.4.1=py_0
   - jedi=0.12.1=py36_0
   - jinja2=2.10=py_1
-  - jpeg=9c=h470a237_0
+  - jpeg=9c=h470a237_1
   - jsonschema=2.6.0=py36_2
   - jupyter=1.0.0=py_1
   - jupyter_client=5.2.3=py_1
@@ -76,14 +77,14 @@ dependencies:
   - libgcc=7.2.0=h69d50b8_2
   - libgcc-ng=7.2.0=hdf63c60_3
   - libgfortran=3.0.0=1
-  - libiconv=1.15=h470a237_2
-  - libpng=1.6.35=ha92aebf_0
+  - libiconv=1.15=h470a237_3
+  - libpng=1.6.35=ha92aebf_1
   - libprotobuf=3.6.0=hd28b015_0
   - libsodium=1.0.16=0
   - libssh2=1.8.0=h5b517e9_2
   - libstdcxx-ng=7.2.0=hdf63c60_3
-  - libtiff=4.0.9=he6b73bb_1
-  - libuuid=2.32.1=h470a237_0
+  - libtiff=4.0.9=he6b73bb_2
+  - libuuid=2.32.1=h470a237_2
   - libxcb=1.13=h470a237_2
   - libxml2=2.9.8=h422b904_3
   - llvmlite=0.23.0=py36_1
@@ -93,6 +94,7 @@ dependencies:
   - matplotlib=2.2.3=py36h8e2386c_0
   - metakernel=0.20.14=py_0
   - mistune=0.8.3=py36h470a237_2
+  - more-itertools=4.3.0=py36_0
   - mpc=1.1.0=4
   - mpfr=3.1.5=0
   - mpmath=1.0.0=py_0
@@ -101,10 +103,11 @@ dependencies:
   - ncurses=6.1=hfc679d8_1
   - networkx=2.1=py_1
   - nodejs=8.10.0=0
+  - nose=1.3.7=py36_2
   - notebook=5.6.0=py36_1
   - numba=0.38.1=py36_0
   - numexpr=2.6.6=py36_0
-  - numpy=1.15.1=py36_blas_openblashd3ea46f_0
+  - numpy=1.15.1=py36_blas_openblashd3ea46f_1
   - olefile=0.45.1=py_1
   - openblas=0.2.20=8
   - openssl=1.0.2p=h470a237_0
@@ -115,17 +118,19 @@ dependencies:
   - pandocfilters=1.4.2=py_1
   - parso=0.3.1=py_0
   - patsy=0.5.0=py_1
-  - pcre=8.41=h470a237_2
+  - pcre=8.41=hfc679d8_3
   - pexpect=4.6.0=py36_0
   - pickleshare=0.7.4=py36_0
   - pillow=5.2.0=py36hc736899_1
   - pip=18.0=py36_1
   - plotly=3.1.1=py_0
+  - pluggy=0.7.1=py_0
   - prometheus_client=0.3.0=py_0
   - prompt_toolkit=1.0.15=py_1
   - protobuf=3.6.0=py36hfc679d8_0
   - pthread-stubs=0.4=h470a237_1
   - ptyprocess=0.6.0=py36_0
+  - py=1.6.0=py_0
   - pyasn1=0.4.4=py_0
   - pyasn1-modules=0.2.1=py_0
   - pycparser=2.18=py_1
@@ -135,13 +140,14 @@ dependencies:
   - pyopenssl=18.0.0=py36_0
   - pyparsing=2.2.0=py_1
   - pysocks=1.6.8=py36_2
+  - pytest=3.7.4=py36_0
   - python=3.6.6=h5001a0f_0
   - python-dateutil=2.7.3=py_0
   - python-editor=1.0.3=py_0
   - python-oauth2=1.0.1=py36_0
   - pytz=2018.5=py_0
-  - pywavelets=0.5.2=py36h7eb728f_2
-  - pyyaml=3.13=py36h470a237_0
+  - pywavelets=1.0.0=py36h7eb728f_0
+  - pyyaml=3.13=py36h470a237_1
   - pyzmq=17.1.2=py36hae99301_0
   - qtconsole=4.4.1=py36_1
   - readline=7.0=haf1bffa_1
@@ -158,7 +164,7 @@ dependencies:
   - sip=4.18.1=py36hfc679d8_0
   - six=1.11.0=py36_1
   - sqlalchemy=1.2.11=py36h470a237_0
-  - sqlite=3.24.0=h2f33b56_0
+  - sqlite=3.24.0=h2f33b56_1
   - statsmodels=0.9.0=py36_0
   - sympy=1.2=py36_0
   - tabulate=0.8.2=py_0
@@ -173,7 +179,7 @@ dependencies:
   - tqdm=4.24.0=py_1
   - traitlets=4.3.2=py36_0
   - twisted=18.7.0=py36h470a237_1
-  - txaio=18.7.1=py_0
+  - txaio=18.8.1=py_0
   - ujson=1.35=py36h470a237_1
   - urllib3=1.23=py36_1
   - vincent=0.4.4=py_1
@@ -181,7 +187,7 @@ dependencies:
   - webencodings=0.5.1=py_1
   - werkzeug=0.14.1=py_0
   - wheel=0.31.1=py36_1
-  - widgetsnbextension=3.4.0=py36_1
+  - widgetsnbextension=3.4.1=py36_0
   - xlrd=1.1.0=py_2
   - xorg-libxau=1.0.8=h470a237_6
   - xorg-libxdmcp=1.1.2=h470a237_7
