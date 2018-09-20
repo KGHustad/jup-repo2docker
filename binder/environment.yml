@@ -66,7 +66,7 @@ dependencies:
   - jupyter_client=5.2.3=py_1
   - jupyter_console=5.2.0=py36_1
   - jupyter_core=4.4.0=py_0
-  - jupyterhub=0.9.2=py36_0
+  - jupyterhub=0.9.3=py36_0
   - kiwisolver=1.0.1=py36h2d50403_2
   - libffi=3.2.1=hfc679d8_5
   - libgcc=7.2.0=h69d50b8_2
