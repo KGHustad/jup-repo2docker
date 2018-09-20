@@ -39,4 +39,3 @@ ghostscript
 
 # Install ffmpeg for matplotlib animations
 ffmpeg
-libav-tools
