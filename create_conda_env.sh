@@ -11,8 +11,9 @@ set +x
 set -e
 
 # use a local .condarc file
-echo -e "channels:\n  - defaults" > .condarc
-export CONDARC=$(realpath .condarc)
+LOCAL_CONDARC=$(realpath .condarc)
+echo -e "channels:\n  - defaults" > ${LOCAL_CONDARC}
+export CONDARC=${LOCAL_CONDARC}
 
 conda create --yes --name ${CONDA_ENV_NAME} python=3.6
 source activate ${CONDA_ENV_NAME}
