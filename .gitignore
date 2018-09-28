@@ -1,3 +1,4 @@
+.condarc
 binder/apt.txt
 binder/conda_packages.txt
 binder/conda_extra_channels.txt

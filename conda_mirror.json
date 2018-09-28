@@ -1,0 +1,9 @@
+{
+    "base_url": "http://158.37.63.92:8000",
+    "channels": [
+        "conda-forge",
+        "lmmentel",
+        "vpython"
+    ]
+}
+
