@@ -10,6 +10,10 @@ set +x
 # exit on non-zero return code
 set -e
 
+# use a local .condarc file
+echo -e "channels:\n  - defaults" > .condarc
+export CONDARC=$(realpath .condarc)
+
 conda create --yes --name ${CONDA_ENV_NAME} python=3.6
 source activate ${CONDA_ENV_NAME}
 
@@ -19,6 +23,9 @@ while read extra_channel; do
     echo "Appending ${extra_channel} to channel list"
     conda config --append channels ${extra_channel}
 done < ${EXTRA_CHANNELS_LIST}
+
+# use mirrors if configured in conda_mirror.json
+./use_conda_mirror.py
 
 conda install --yes --file ${CONDA_PACKAGE_LIST}
 
