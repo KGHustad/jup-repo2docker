@@ -17,11 +17,11 @@ export CONDARC=$(realpath .condarc)
 conda create --yes --name ${CONDA_ENV_NAME} python=3.6
 source activate ${CONDA_ENV_NAME}
 
-conda config --prepend channels conda-forge
+conda config --file ${LOCAL_CONDARC} --prepend channels conda-forge
 
 while read extra_channel; do
     echo "Appending ${extra_channel} to channel list"
-    conda config --append channels ${extra_channel}
+    conda config --file ${LOCAL_CONDARC} --append channels ${extra_channel}
 done < ${EXTRA_CHANNELS_LIST}
 
 # use mirrors if configured in conda_mirror.json
