@@ -27,6 +27,8 @@ done < ${EXTRA_CHANNELS_LIST}
 # use mirrors if configured in conda_mirror.json
 ./use_conda_mirror.py
 
+conda config --show channels
+
 conda install --yes --file ${CONDA_PACKAGE_LIST}
 
 # remove pyqt and qt
