@@ -3,7 +3,15 @@
 import json
 import os
 import re
+import requests
 import sys
+
+def mirror_available(base_url, channel):
+    print(f'Verifying {base_url}/{channel}')
+    try:
+        return (requests.head(f'{base_url}/{channel}/noarch/repodata.json', timeout=0.5).status_code < 400)
+    except:
+        return False
 
 mirror_config_filename = 'conda_mirror.json'
 if not os.path.isfile(mirror_config_filename):
@@ -36,6 +44,9 @@ with open(conda_config_filename, 'r') as f:
 
 new_conda_config = old_conda_config
 for channel in channels_to_replace:
+    if not mirror_available(base_url, channel):
+   	    print(f'Channel unavailable: {base_url}/{channel}')
+   	    continue
     new_channel = f'{base_url}/{channel}'
     new_conda_config = re.sub('^(\\s+-\\s*){channel}$'.format(channel=channel), 
         '\\1{new_channel}'.format(new_channel=new_channel), 
