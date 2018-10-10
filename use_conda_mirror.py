@@ -45,8 +45,8 @@ with open(conda_config_filename, 'r') as f:
 new_conda_config = old_conda_config
 for channel in channels_to_replace:
     if not mirror_available(base_url, channel):
-   	    print(f'Channel unavailable: {base_url}/{channel}')
-   	    continue
+        print(f'Channel unavailable: {base_url}/{channel}')
+        continue
     new_channel = f'{base_url}/{channel}'
     new_conda_config = re.sub('^(\\s+-\\s*){channel}$'.format(channel=channel), 
         '\\1{new_channel}'.format(new_channel=new_channel), 
