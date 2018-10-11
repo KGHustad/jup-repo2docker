@@ -17,9 +17,7 @@ export CONDARC=${LOCAL_CONDARC}
 # clear/remove .condarc if it exists
 [ -f "$LOCAL_CONDARC" ] && rm $LOCAL_CONDARC          
 
-conda create --yes --name ${CONDA_ENV_NAME} python=3.6
-source activate ${CONDA_ENV_NAME}
-
+# add and configure channels
 conda config --file ${LOCAL_CONDARC} --prepend channels conda-forge
 
 while read extra_channel; do
@@ -31,6 +29,10 @@ done < ${EXTRA_CHANNELS_LIST}
 ./use_conda_mirror.py
 
 conda config --show channels
+
+# create and install environment
+conda create --yes --name ${CONDA_ENV_NAME} python=3.6
+source activate ${CONDA_ENV_NAME}
 
 conda install --yes --file ${CONDA_PACKAGE_LIST}
 
