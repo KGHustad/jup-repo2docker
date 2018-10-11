@@ -30,6 +30,12 @@ done < ${EXTRA_CHANNELS_LIST}
 
 conda config --show channels
 
+# patch jupyter-repo2docker miniconda-installation to use the same channels
+conda config --show channels | grep '  - ' | sed 's/  - /conda config --system --add channels /' > /tmp/conda-channels
+sed "/conda config --system --add channels conda-forge/{r /tmp/conda-channels
+d;};" ~/.local/lib/python3.6/site-packages/repo2docker/buildpacks/conda/install-miniconda.bash
+rm /tmp/conda-channels
+
 # create and install environment
 conda create --yes --name ${CONDA_ENV_NAME} python=3.6
 source activate ${CONDA_ENV_NAME}
