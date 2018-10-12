@@ -12,12 +12,12 @@ set -e
 
 # use a local .condarc file
 LOCAL_CONDARC=$(realpath .condarc)
-echo -e "channels:\n  - defaults" > ${LOCAL_CONDARC}
 export CONDARC=${LOCAL_CONDARC}
 
-conda create --yes --name ${CONDA_ENV_NAME} python=3.6
-source activate ${CONDA_ENV_NAME}
+# clear/remove .condarc if it exists
+[ -f "$LOCAL_CONDARC" ] && rm $LOCAL_CONDARC          
 
+# add and configure channels
 conda config --file ${LOCAL_CONDARC} --prepend channels conda-forge
 
 while read extra_channel; do
@@ -29,6 +29,30 @@ done < ${EXTRA_CHANNELS_LIST}
 ./use_conda_mirror.py
 
 conda config --show channels
+
+# patch jupyter-repo2docker miniconda-installation to use the same channels
+INSTALLER=~/.local/lib/python3.6/site-packages/repo2docker/buildpacks/conda/install-miniconda.bash
+SHA256="8aaeda9e0a3a806037cd9b08e4bc3aca6e1a8e143690fa3ae3a7d44835cfa03f"
+
+if [ -f "$INSTALLER" ]
+then
+  if echo "$SHA256 $INSTALLER" | sha256sum --quiet -c
+  then
+    echo "Patching $INSTALLER"
+    conda config --show channels | grep '  - ' | sed 's/  - /conda config --system --add channels /' > /tmp/conda-channels
+    sed -i "/conda config --system --add channels conda-forge/{r /tmp/conda-channels
+    d;};" ~/.local/lib/python3.6/site-packages/repo2docker/buildpacks/conda/install-miniconda.bash
+    rm /tmp/conda-channels
+  else
+    printf "\033[1;33m%s\033[0m\n" "I won't patch $INSTALLER. The checksum is wrong"
+  fi
+else
+  printf "\033[1;33m%s\033[0m\n" "I can't patch $INSTALLER. The file is not there"
+fi
+
+# create and install environment
+conda create --yes --name ${CONDA_ENV_NAME} python=3.6
+source activate ${CONDA_ENV_NAME}
 
 conda install --yes --file ${CONDA_PACKAGE_LIST}
 
