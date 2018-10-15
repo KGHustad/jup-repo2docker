@@ -51,7 +51,7 @@ else
 fi
 
 # create and install environment
-conda create --yes --name ${CONDA_ENV_NAME} python=3.6
+conda create --yes --name ${CONDA_ENV_NAME}
 source activate ${CONDA_ENV_NAME}
 
 conda install --yes --file ${CONDA_PACKAGE_LIST}
