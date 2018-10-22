@@ -1,1 +1,2 @@
 mendeleev	<lmmentel>
+pyscf	<pyscf>
